@@ -1,6 +1,10 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const { fromControllerAction } = require('./mapper');
 
-// Route related to delete events
+module.exports = ({ eventsController }) => {
+  const router = express.Router();
 
-module.exports = router;
+  // Routes related to event
+  router.delete('/', fromControllerAction(eventsController.eraseEvents));
+  return router;
+};

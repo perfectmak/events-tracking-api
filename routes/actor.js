@@ -1,6 +1,12 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const { fromControllerAction } = require('./mapper');
 
-// Routes related to actor.
+module.exports = ({ actorsController }) => {
+  const router = express.Router();
 
-module.exports = router;
+  // Routes related to event
+  router.get('/', fromControllerAction(actorsController.getAllActors));
+  router.put('/', fromControllerAction(actorsController.updateActor));
+  router.get('/streak', fromControllerAction(actorsController.getStreak));
+  return router;
+};
