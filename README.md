@@ -1,7 +1,8 @@
 # Github Event Tracking API
 
 A REST API built with Node.js to keep track of githhub events, their actors and repositories
-and allow querying based on events, actors and their events streaks.
+and allow querying based on events, actors and their events streaks. 
+The purpose of this project is to show a Clean Architecture way of building framework agnostic APIs in node.js
 
 ## How to Run
 Ensure you have npm(>= 8.14.0) installed, then run:
